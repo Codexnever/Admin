@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bill Format</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 1450px;
+            height: 2000px;
+            margin: auto;
+        }
+
+        .left-side {
+            width: 50%;
+            height: 100%;
+            float: left;
+        }
+
+        .right-side {
+            width: 50%;
+            height: 100%;
+            float: right;
+        }
+
+        .heading {
+            background-color: rgb(19, 82, 255);
+            color: white;
+            padding: 13px;
+            z-index: 99999;
+                width: 45rem;
+
+        }
+
+        .input-field {
+            width: calc(100% - 20px);
+                margin: 26px;
+            padding: 5px;
+            border-left: none;
+            border-right:none ;
+            border-top: none;
+        }
+
+        .button {
+     background-color: rgb(19, 82, 255);
+    color: white;
+    padding: 12px 46px;
+    border: none;
+    cursor: pointer;
+    margin-left: 11rem;
+}
+
+        .button:hover {
+            background-color: #0a3d91;
+        }
+
+        .right-side-content {
+            margin-top: 50px;
+                padding-left: 118px;
+
+        }
+
+        .right-side-content p {
+                margin: 58px 0;
+        }
+  @media only screen and (max-width: 768px) {
+        .right-side {
+    width: 50%;
+    position: absolute;
+    height: 100%;
+    top: 34rem;
+    left: -56px;
+    float: right;
+}
+.left-side {
+    width: 95%;
+    height: 100%;
+    float: left;
+}
+.container {
+       width: 779px;
+    height: 1000px;
+    margin: auto;
+        overflow-y: hidden;
+    overflow-x: hidden;
+}
+.heading {
+    background-color: rgb(19, 82, 255);
+    color: white;
+    padding: 13px;
+    z-index: 99999;
+    width: 47rem;
+  
+}
+
+}
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="left-side">
+            <div class="heading">Bill Format</div>
+            <input type="text" class="input-field" placeholder="*Shop Name">
+            <input type="text" class="input-field" placeholder="*Shop Type">
+            <input type="text" class="input-field" placeholder="*GST No">
+            <input type="text" class="input-field" placeholder="*Address">
+            <input type="text" class="input-field" placeholder="*Contact">
+            <input type="text" class="input-field" placeholder="*Message">
+            <button class="button">View</button>
+            <button class="button">Update</button>
+        </div>
+        <div class="right-side">
+            <div class="right-side-content">
+                <p>Cuteleary Shop</p>
+                <p>Electronic</p>
+                <p>Pune, Maharashtra</p>
+                <p>123456789</p>
+                <p>Thank you Visit again</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

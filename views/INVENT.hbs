@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Side Navbar Example</title>
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+</head>
+
+<body>
+    {{!-- <button id="openModalButton">Open Modal</button> --}}
+    <!-- Modal with iframe -->
+    <div id="myModal" class="modal" style="display: none;">
+   <div class="modal-content">
+        <span class="close">&times;</span>
+        <iframe id="iframeContent" frameborder="0" width="1450" height="2000"></iframe>
+    </div>
+    </div>
+    <!-- Top Navbar -->
+    <nav class="top-navbar">
+
+        <div class="logo">
+            <img src="/img/logo.png" alt="img">
+        </div>
+        <div class="input-fields ">
+            <div class="dropdown">
+                <button class="dropbtn">Master Manage<i class="zmdi zmdi-caret-down"></i></button>
+
+                <div class="dropdown-content">
+                     <a href="#" onclick="openModal('/Category')">Category</a>
+                     <a href="#" onclick="openModal('/Sub-category')">Sub-Category</a>
+                    <a href="#"onclick="openModal('/Listing')">Add Item</a>
+                    <a href="#"onclick="openModal('/Order')">Order Type Managment</a>
+                   <a href="#"onclick="openModal('/Payment')">Payment Method</a>
+                   <a href="#"onclick="openModal('/Employee')">Employee Managment</a>
+                   <a href="#"onclick="openModal('/Customer')">Customer Managment</a>
+                    <a href="#"onclick="openModal('/Charges')">Additional Charges</a>
+                 <a href="#"onclick="openModal('/Tax')">Tax Managment</a>
+                    <a href="#"onclick="openModal('/Discount')">Discount Managment</a>
+                   <a href="#"onclick="openModal('/Unit')">Add Unit</a>
+                   <a href="#"onclick="openModal('/Brand')">Brand</a>
+                   <a href="#"onclick="openModal('/Vender')">Vender</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn">Reports <i class="zmdi zmdi-caret-down"></i></button>
+                <div class="dropdown-content">
+                 <a href="#"onclick="openModal('/Reports')">Report</a>
+
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn">All Settings <i class="zmdi zmdi-caret-down"></i></button>
+                <div class="dropdown-content">
+                     <a href="#" onclick="openModal('/Setting')">Settings</a>
+                   <a href="#"onclick="openModal('/Bill')">Bill Format</a>
+                      <a href="#"onclick="openModal('/Access')">User Access</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn">Help <i class="zmdi zmdi-caret-down"></i></button>
+                <div class="dropdown-content">
+                    <a href="#"onclick="openModal('/Help')">Help</a>
+                </div>
+            </div>
+        </div>
+        <button class="hamburger" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+        </button>
+    </nav>
+
+    <div class="input-fieldss ">
+
+        <div class="dropdown">
+            <button class="dropbtn">Master manage<i class="zmdi zmdi-caret-down"></i></button>
+
+            <div class="dropdown-content">
+                   <a href="#" onclick="openModal('/Category')">Category</a>
+                     <a href="#" onclick="openModal('/Sub-category')">Sub-Category</a>
+                    <a href="#"onclick="openModal('/Listing')">Add Item</a>
+                    <a href="#"onclick="openModal('/Order')">Order Type Managment</a>
+                   <a href="#"onclick="openModal('/Payment')">Payment Method</a>
+                   <a href="#"onclick="openModal('/Employee')">Employee Managment</a>
+                   <a href="#"onclick="openModal('/Customer')">Customer Managment</a>
+                    <a href="#"onclick="openModal('/Charges')">Additional Charges</a>
+                 <a href="#"onclick="openModal('/Tax')">Tax Managment</a>
+                    <a href="#"onclick="openModal('/Discount')">Discount Managment</a>
+                   <a href="#"onclick="openModal('/Unit')">Add Unit</a>
+                   <a href="#"onclick="openModal('/Brand')">Brand</a>
+                   <a href="#"onclick="openModal('/Vender')">Vender</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">Reports <i class="zmdi zmdi-caret-down"></i></button>
+            <div class="dropdown-content">
+                 <a href="#"onclick="openModal('/Reports')">Report</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">All Settings <i class="zmdi zmdi-caret-down"></i></button>
+            <div class="dropdown-content">
+                     <a href="#" onclick="openModal('/Setting')">Settings</a>
+                   <a href="#"onclick="openModal('/Bill')">Bill Format</a>
+                      <a href="#"onclick="openModal('/Access')">User Access</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">Help <i class="zmdi zmdi-caret-down"></i></button>
+            <div class="dropdown-content">
+                <a href="#"onclick="openModal('/Help')">Help</a>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="viewport">
+        <div id="sidebar">
+            <ul class="nav">
+                <li><a href="#"><i class="zmdi zmdi-home" style="font-size: 33px;    margin-left: 3px;"></i> Home</a>
+                </li>
+                <li><a href="#"><i class="fa-solid fa-anchor" style="font-size: 33px;"></i> Order</a></li>
+                <li><a href="#" style="    padding-right: 0px;
+    padding-left: 0px;"><i class="zmdi zmdi-widgets" style="    font-size: 35px;
+    margin-left: 10px;
+"></i> All order</a></li>
+                <li><a href="#"><i class="zmdi zmdi-calendar" style="font-size: 35px;margin-left: 6px;"></i> Listing</a>
+                </li>
+                <li><a href="#"><i class="fa-regular fa-rectangle-list" style="font-size: 35px;    margin-left: 5px;
+"></i> Inventory</a></li>
+            </ul>
+
+        </div>
+        <div id="content">
+            <div class="container-fluid"></div>
+          <div class="container">
+    
+    </div>
+
+    </div>
+
+    <style>
+        body {
+
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            font-family: 'Roboto', sans-serif;
+            font-size: 16px;
+        }
+
+        body::-webkit-scrollbar {
+            width: 1px;
+        }
+
+        /* Sidebar Styles */
+        #viewport {
+            padding-left: 150px;
+            -webkit-transition: all 0.5s ease;
+            -moz-transition: all 0.5s ease;
+            -o-transition: all 0.5s ease;
+            transition: all 0.5s ease;
+            margin: 0;
+        }
+
+
+
+        .modal-content {
+            width: 75rem;
+            height: 38rem;
+            padding-top: 0px;
+            background-color: #fefefe;
+            padding: 0px;
+            border: 1px solid #888;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+         .container {
+            display: flex;
+            height: 44rem;
+            width: 100%;
+        }
+
+
+     
+
+     
+    
+
+        .blue-bar {
+            background-color: rgb(0, 119, 255);
+            color: white;
+            padding: 10px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .button-container {
+            margin-bottom: 20px;
+        }
+
+        .button-container button {
+          width: 15rem;
+           background-color: rgb(0, 119, 255);
+           border: none;
+          height:  2rem;
+          color: white;
+        }
+
+        .setting-button {
+            background-color: rgb(0, 119, 255);
+            color: white;
+            padding: 10px 20px;
+            width: 31rem;
+            border: none;
+            cursor: pointer;
+        }
+
+       
+
+        #content {
+            width: 100%;
+            position: relative;
+            margin-right: 0;
+        }
+
+        #sidebar {
+            top: 52px;
+            left: 0px;
+            position: absolute;
+            width: 100px;
+                height: 93%;
+            overflow-y: auto;
+            background: #37474F;
+            -webkit-transition: all 0.5s ease;
+            -moz-transition: all 0.5s ease;
+            -o-transition: all 0.5s ease;
+            transition: all 0.5s ease;
+            display: block;
+            /* Initially hide the sidebar */
+            flex-direction: column;
+            /* Display sidebar items vertically by default */
+        }
+
+
+        #sidebar header {
+            background-color: #263238;
+            font-size: 20px;
+            line-height: 52px;
+            text-align: center;
+        }
+
+        #sidebar::-webkit-scrollbar {
+            width: 0px;
+        }
+
+        #sidebar header a {
+            color: #fff;
+            display: block;
+            text-decoration: none;
+        }
+
+        .input-fieldss {
+            display: none;
+        }
+
+        #sidebar header a:hover {
+            color: #fff;
+        }
+
+        #sidebar .nav {
+            list-style-type: none;
+            padding: 17px;
+        }
+
+        #sidebar .nav a {
+            background: none;
+            color: #CFD8DC;
+            font-size: 14px;
+            padding: 16px 24px;
+            display: block;
+            text-decoration: none;
+        }
+
+        #sidebar .nav a:hover {
+            background: none;
+            color: #ECEFF1;
+        }
+
+        .top-navbar {
+            display: flex;
+            background-color: #007bff;
+            color: #fff;
+            justify-content: space-between;
+            padding: 6px 20px;
+            padding-right: 37rem;
+        }
+
+        .logo {
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            padding: 0;
+            width: 130px;
+            height: 40px;
+            z-index: 9999;
+        }
+
+        .input-fields {
+            flex-grow: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .input-fields input[type="text"],
+        .input-fields input[type="password"] {
+            padding: 6px;
+            border-radius: 5px;
+            border: none;
+            outline: none;
+        }
+
+        .hideme {
+            display: none;
+            background-color: red;
+            position: absolute;
+            top: -24px;
+            right: 2px;
+        }
+
+        .dropdown {
+            position: relative;
+        }
+
+        .dropbtn {
+            background-color: transparent;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            font-size: 17px;
+            cursor: pointer;
+        }
+
+        .dropbtn:hover,
+        .dropbtn:focus {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 200px;
+            max-height: 200px;
+            /* Set a fixed height */
+            overflow-y: auto;
+            /* Add scrollbar if content overflows */
+            box-shadow: 5px 2px 0 rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content::-webkit-scrollbar {
+            width: 0px;
+        }
+
+
+        .dropdown-content a {
+            color: #181818;
+            padding: 10px 15px;
+            text-decoration: none;
+            display: block;
+            font-size: 15px;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown:hover .dropbtn {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .nav {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .nav li {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 10px;
+        }
+
+        .nav li a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 16px;
+            margin-left: 10px;
+        }
+
+        .nav li i {
+            margin-right: 10px;
+            display: block;
+        }
+
+        .hamburger {
+            background: none;
+            border: none;
+            display: none;
+            cursor: pointer;
+            color: #fff;
+            font-size: 24px;
+        }
+
+        /*  cards
+     */
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            height: 30rem;
+            /* Adjust spacing between cards */
+        }
+
+        .top-bar {
+            background-color: rgb(0, 130, 252);
+            border-radius: 5px 5px 5px 5px;
+            width: 25.8rem;
+            margin-top: -20px;
+            height: 48px;
+            margin-left: -22px;
+        }
+
+ 
+
+
+        @media only screen and (max-width: 768px) {
+            body {
+                margin: 0;
+                padding: 0;
+                overflow-x: hidden;
+                font-family: 'Roboto', sans-serif;
+                font-size: 16px;
+                height: 100rem;
+            }
+
+
+
+            #sidebar {
+                position: fixed;
+                top: 87rem;
+                left: 0;
+                z-index: 9999;
+                width: 100%;
+                height: 70px;
+                /* Set the height as needed */
+                overflow-y: auto;
+                background-color: #37474F;
+                flex-direction: row;
+                /* Display sidebar items horizontally */
+            }
+
+            #sidebar .nav {
+                list-style-type: none;
+                padding: 0;
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+            }
+
+            .nav li {
+                margin: 0;
+            }
+
+            .nav li a:hover {
+                color: #ECEFF1;
+            }
+
+            .nav li i {
+                font-size: 25px;
+            }
+
+            .hamburger {
+                float: right;
+                margin-right: 20px;
+                /* Adjust margin as needed */
+                height: 100%;
+                display: block;
+                background: none;
+                border: none;
+                cursor: pointer;
+            }
+
+
+            .input-fields {
+                display: none;
+                /* Initially hide */
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                /* Display items vertically */
+                gap: 10px;
+                font-size: 18px;
+            }
+
+            .input-fieldss {
+                margin-top: 0rem;
+                width: 48rem;
+                display: none;
+                /* Initially hide */
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                /* Display items vertically */
+                gap: 10px;
+                font-size: 18px;
+                transition: all 1s ease-in;
+                /* Transition property */
+                background-color: rgb(13, 137, 253);
+            }
+
+            .topnav a.icon {
+                float: right;
+                position: fixed;
+                /* Set the position to fixed */
+                right: 20px;
+                /* Adjust the right position as needed */
+            }
+
+
+
+
+
+            #sidebar .nav {
+                list-style-type: none;
+                padding: 0;
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+            }
+
+            .nav {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-around;
+                align-items: center;
+                padding: 0;
+                margin: 0;
+                list-style: none;
+            }
+
+            .nav li a:hover {
+                color: #ECEFF1;
+            }
+
+            .nav li i {
+                font-size: 25px;
+            }
+
+            .top-bar {
+                background-color: rgb(0, 130, 252);
+                border-radius: 5px 5px 5px 5px;
+                width: 41.2rem;
+                margin-top: -20px;
+                height: 48px;
+                margin-left: -18px;
+            }
+ 
+
+          
+
+
+   
+        }
+    </style>
+
+    <script>
+
+        function toggleMenu() {
+            var x = document.getElementsByClassName("input-fieldss");
+
+            for (var i = 0; i < x.length; i++) {
+                if (x[i].style.display === "none" || x[i].style.display === "") {
+                    x[i].style.display = "block"; // Change display to block
+                } else {
+                    x[i].style.display = "none"; // Change display to none
+                }
+            }
+        }
+
+
+
+
+
+      var modal = document.getElementById("myModal");
+
+    // Get the close button
+    var span = document.getElementsByClassName("close")[0];
+
+    // Function to open the modal with different URLs
+    function openModal(url) {
+        modal.style.display = "block";
+        document.getElementById("iframeContent").src = url;
+    }
+
+    // Event listener for the close button
+    span.onclick = function () {
+        modal.style.display = "none";
+    }
+
+    // Event listener for clicks outside the modal
+    window.onclick = function (event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+    </script>
+
+</body>
+
+</html>

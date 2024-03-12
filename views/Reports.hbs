@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reports</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .container {
+            width: 78rem;
+             
+                height: 41rem;
+            
+            margin: auto;
+        }
+
+        .heading {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 15px;
+            font-weight: bold;
+        }
+
+    .input-group {
+    position: absolute;
+    top: 75px;
+    right: 44rem;
+}
+
+        .input-group input {
+    margin-right: 10px;
+    width: 8rem;
+    height: 2rem;
+    
+    border-radius: 6px;
+}
+
+        .clear-button {
+            background-color: rgb(19, 82, 255);
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+ .options-container {
+ margin-top: 165px;
+    box-shadow: 6px 9px 9px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+       padding-left: 75px;
+    width: 54rem;
+    padding-right: 19px;
+}
+
+       .options-container button {
+    display: inline-block;
+    margin-right: 33px;
+    margin-bottom: 10px;
+    background-color: rgb(19, 82, 255);
+    color: white;
+    width: 8rem;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+        .options-container button:last-child {
+            margin-right: 0;
+        }
+
+        .delivery-payment-container {
+            margin-top: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+                width: 57rem;
+        }
+
+        .delivery-payment-container select, .delivery-payment-container button {
+            display: inline-block;
+                height: 2rem;
+            margin-right: 20px;
+            margin-bottom: 10px;
+                margin-left: 5rem;
+        }
+
+        .delivery-payment-container button {
+            background-color: rgb(19, 82, 255);
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .delivery-payment-container button:last-child {
+            margin-right: 0;
+        }
+           @media only screen and (max-width: 768px) {
+            .container {
+                width: auto;
+                margin: 20px;
+                overflow-y: scroll;
+            }
+
+            .heading {
+                position: static;
+                text-align: center;
+            }
+
+            .input-group {
+                position: static;
+                text-align: center;
+                margin-top: 20px;
+                margin-bottom: 20px;
+                right: auto;
+            }
+
+            .input-group input {
+                width: 98%;
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
+
+            .options-container {
+                margin-top: 20px;
+                box-shadow: none;
+                padding: 20px;
+                width: auto;
+            }
+
+            .options-container button {
+                width: 100%;
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
+
+            .delivery-payment-container {
+                margin-top: 20px;
+                box-shadow: none;
+                padding: 20px;
+                width: auto;
+            }
+
+            .delivery-payment-container select, .delivery-payment-container button {
+                width: 100%;
+                margin-right: 0;
+                margin-bottom: 10px;
+                margin-left: 0rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="heading">Reports</div>
+        <div class="input-group">
+            <input type="Date" placeholder="From">
+            <input type="Date" placeholder="To">
+            <button class="clear-button">Clear</button>
+        </div>
+        <div class="options-container">
+            <button>Offline</button>
+            <button>Online</button>
+            <button>Total Sale</button>
+            <button>Hot Sale Item</button>
+            <br>
+            <button>Tax</button>
+            <button>Discount</button>
+            <button>Cancel Item</button>
+            <button>Cancel Order</button>
+        </div>
+        <div class="delivery-payment-container">
+            <select>
+                <option value="">Delivery Option</option>
+                <option value="delivery">Delivery</option>
+                <option value="pickup">Pickup</option>
+            </select>
+            <button>Deliver</button>
+            <select>
+                <option value="">Payment Option</option>
+                <option value="cash">Cash</option>
+                <option value="card">Card</option>
+            </select>
+            <button>Payment</button>
+        </div>
+    </div>
+</body>
+</html>

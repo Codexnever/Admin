@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            display: flex;
+            width: 100%;
+            height: 100vh;
+        }
+
+        .left-side, .right-side {
+            flex: 1;
+            padding: 20px;
+        }
+
+        .left-side {
+            background-color: #007bff;
+            color: white;
+        }
+
+        .right-side {
+            background-color: #ffffff;
+        }
+
+        .heading {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 0px;
+    background-color: rgb(0, 102, 255);
+    padding: 0;
+    margin: 0;
+        margin-top: -52.3px;
+    width: 81rem;
+    height: 2.5rem;
+    margin-left: -21px;
+}
+
+        .checkbox-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 44px;
+}
+
+
+
+        .checkbox-column {
+            flex: 1;
+            margin-right: 20px;
+        }
+
+        .checkbox {
+            margin-bottom: 10px;
+        }
+.heading h4{
+        display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 8rem;
+}
+        @media only screen and (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+
+            .left-side, .right-side {
+                width: 100%;
+                padding: 10px;
+            }
+            .checkbox {
+    font-size: 20px;
+}
+.heading{
+     margin-left: -100px;
+}
+.heading h4{
+    margin-right: 18rem;
+        margin-top: 42px;
+}
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        
+        <div class="right-side">
+            <div class="heading">
+                <h4>Settings</h4>
+            </div>
+            <div class="checkbox-container">
+                <div class="checkbox-column">
+                    <div class="checkbox">
+                        <input type="checkbox" id="bill-print" name="bill-print">
+                        <label for="bill-print">Bill Print</label>
+                    </div>
+                    <div class="checkbox">
+                        <input type="checkbox" id="calculate-window" name="calculate-window">
+                        <label for="calculate-window">Calculate Window</label>
+                    </div>
+                    <div class="checkbox">
+                        <input type="checkbox" id="stock-notification" name="stock-notification">
+                        <label for="stock-notification">Stock Notification</label>
+                    </div>
+                    <div class="checkbox">
+                        <input type="checkbox" id="payment-qr-code" name="payment-qr-code">
+                        <label for="payment-qr-code">Payment QR Code On Bill</label>
+                    </div>
+                </div>
+                <div class="checkbox-column">
+                    <div class="checkbox">
+                        <input type="checkbox" id="additional-charges" name="additional-charges">
+                        <label for="additional-charges">Apply Additional Charges</label>
+                    </div>
+                    <div class="checkbox">
+                        <input type="checkbox" id="apply-tax" name="apply-tax">
+                        <label for="apply-tax">Apply Tax</label>
+                    </div>
+                    <div class="checkbox">
+                        <input type="checkbox" id="apply-offer" name="apply-offer">
+                        <label for="apply-offer">Apply Offer</label>
+                    </div>
+                    <div class="checkbox">
+                        <input type="checkbox" id="cancel-item-comment" name="cancel-item-comment">
+                        <label for="cancel-item-comment">Cancel Item Comment Window</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

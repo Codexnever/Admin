@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Listing</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            width: 85%;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        .navbar {
+            background-color: #0655ff;
+            color: #fff;
+            height: 3rem;
+            text-align: center;
+            padding: 10px 0;
+        }
+        
+        .listing-title {
+            font-size: 24px;
+        }
+        
+        .listing-info {
+            margin-top: 20px;
+            border-left: 5px solid #333;
+            padding-left: 10px;
+            font-weight: bold;
+        }
+        
+        .container {
+            display: flex;
+            flex-direction: row;
+            margin: 20px auto;
+        }
+        
+        .column {
+            width: 30%;
+            padding: 0 10px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        
+        input[type="text"],
+        input[type="number"],
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        select {
+            background-color: #ccc; /* Gray background for select */
+                margin-bottom: 22px;
+        }
+        
+        input[type="text"]:focus,
+        input[type="number"]:focus {
+            outline: none;
+            border: 2px solid #333;
+        }
+
+        input[type="date"] {
+            border: none;
+                margin-top: 27px;
+            border-bottom: 1px solid #ccc; /* Only bottom border for date input */
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 0; /* Removing border-radius for date input */
+            width: calc(100% - 20px); /* Adjusting width for date input */
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+        }
+        
+        .footer button {
+            padding: 10px 20px;
+            margin: 0 10px;
+            background-color: #136ef7;
+            color: #fff;
+            margin-top: -10px;
+            border: none;
+            cursor: pointer;
+        }
+@media only screen and (max-width: 768px) {
+body{
+    width: 100%;
+}
+    .container {
+        flex-direction: column; /* Change flex direction to column */
+        align-items: center; /* Center align items horizontally */
+    }
+    
+    .column {
+        width: 100%; /* Set width to full for better responsiveness */
+        margin-bottom: 20px; /* Add some spacing between columns */
+    }
+    
+    input[type="text"],
+    input[type="number"],
+    select,
+    input[type="date"] {
+        width: calc(100% - 20px); /* Adjust input width */
+    }
+
+    .footer {
+        position: fixed; /* Fixed position to stick to the bottom */
+        width: 100%; /* Full width */
+        bottom: 0; /* Stick to the bottom */
+        background-color: #0655ff; /* Match the navbar color */
+        padding: 10px 0; /* Add some padding */
+        text-align: center; /* Center align buttons */
+        z-index: 1000; /* Ensure it's on top of other content */
+    }
+
+    .footer button {
+        margin: 5px; /* Add some margin between buttons */
+    }
+}
+
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <h1 class="listing-title">Listings Product</h1>
+    </div>
+    
+    <div class="listing-info">
+        Listing Information
+    </div>
+    
+    <div class="container">
+        <div class="column">
+            <label for="productId">Product ID</label>
+            <input type="text" id="productId" placeholder="Product ID"style=" border-right:none;border-left:none;border-top: none;" >
+            
+            <select id="unit">
+                <option value="unit">Category</option>
+            </select>
+            
+            <input type="text" id="manufacturer" placeholder="MRP Price"style=" border-right:none;border-left:none;border-top: none;" >
+            
+            <select id="unit">
+                <option value="unit">Unit</option>
+            </select>
+             <label for="uni" style="margin-top:20px ;" >Manufactur Details</label>
+            <select id="uni">
+                <option value="unit">Category Name</option>
+            </select>
+            
+            <label for="description" style="margin-top:20px ;" >Description</label>
+         <input type="text" id="description" placeholder="Description" style="border-right:none;border-left:none;border-top: none;margin-top: 30px;margin-top: 0px;width: 70rem;">
+        </div>
+        
+        <div class="column">
+            <label for="productName">Product Name</label>
+            <input type="text" id="productName" placeholder="Product Name"style=" border-right:none;border-left:none;border-top: none;" >
+            
+            <select id="subCategory">
+                <option value="subCategory">Sub Category</option>
+            </select>
+            
+            <input type="number" id="sellingPrice" placeholder="Selling Price"style=" border-right:none;border-left:none;border-top: none;" >
+            
+            <input type="text" id="tax" placeholder="Tax">
+          <input type="date" id="tax" placeholder="Tax" style="
+    margin-top: 56px;
+">
+        </div>
+        
+        <div class="column">
+        <input type="text" id="hsnCode" placeholder="HSN Code" style="border-right:none;border-left:none;border-top: none;margin-top: 26px;">
+                  
+            <select id="subCategory">
+                <option value="subCategory">Sub Category</option>
+                <option value="subCategory">Sub Category</option>
+            </select>
+
+            <input type="text" id="expiryDate" placeholder="Stock" style="border-right:none;border-left:none;border-top: none;margin-top: 40px;">
+
+        <input type="date" id="expiryDate" placeholder="Expiry Date" style="
+    margin-top: 62px;
+">
+        </div>
+    </div>
+    
+    <div class="footer">
+        <button>Add</button>
+        <button>Update</button>
+        <button>Delete</button>
+    </div>
+</body>
+</html>
